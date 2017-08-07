@@ -1,0 +1,24 @@
+{
+  "name": "speakout",
+  "version": "1.0.0",
+  "description": "testing speakout app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NCa24/SpeakOut-angular-version.git"
+  },
+  "author": "nelson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NCa24/SpeakOut-angular-version/issues"
+  },
+  "homepage": "https://github.com/NCa24/SpeakOut-angular-version#readme",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.3",
+    "bootstrap": "^3.3.7"
+  }
+}

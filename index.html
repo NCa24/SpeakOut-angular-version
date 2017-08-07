@@ -1,8 +1,9 @@
 <html ng-app="langLearn">
 <head>
 	<title>Welcome to SpeakOut</title>
-		<link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">	
-		<link rel="stylesheet" type="text/css" href="lib/styling.css">
+
+        <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">	
+		<link rel="stylesheet" type="text/css" href="styling.css">
 
 </head>
 <body ng-controller="UserListController">
@@ -23,20 +24,21 @@
 			<div class="collapse navbar-collapse" id="bs-nav-demo">
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#/your_dashboard">Dashboard</a></li>
-					<li><a href="#/users/profile/{{userList[0].firstName}}">{{userList[0].firstName}}</a></li>
-					<li><a href="#">Logout</a></li>
+					<li><a ui-sref="dashboard">Dashboard</a></li>
+					<li><a ui-sref="users({ username: id})">{{userList[0].firstName}}</a></li>
+					<li><a ui-sref="#">Logout</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
     
-    <div class="container" ng-view>
+    <div class="container" ui-view>
     
     </div>
-    
-    <script src="lib/angular.min.js"></script>
-    <script src="lib/angular-route.min.js"></script>
-    <script src="js/app.js"></script>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+
 </body>
 </html>
