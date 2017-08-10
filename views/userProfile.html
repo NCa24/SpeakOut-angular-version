@@ -1,0 +1,49 @@
+<div class="interests">
+    <div id="Interests_bar">
+        <h4>
+            Your Interests are: 
+            <button class="glyphicon glyphicon-edit pull-right" data-target="#interestsModal" data-toggle="modal"></button> 
+        </h4> 
+    </div>
+    <ul class="list-group" style="width: 25%">
+      <div ng-repeat="interest in userList[0].userInterests">
+                            <li class="list-group-item">{{interest}}</li>
+                       </div>
+    </ul>
+    <div style="width: 25%">
+        <h4 style="padding-bottom: 10px">{{userList[0].firstName}} progress overview:</h4>
+        <div id="myProgress">
+            <div id="myBar">{{userList[0].progress + "%"}}</div>
+        </div>
+        <br>
+        {{setProg()}}
+    </div>
+
+    <div class="modal" id="interestsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Interests:</h4>
+                </div>
+                
+                <div class="modal-body">
+                   <ul class="list-group" style="width: 25%">
+                        <div ng-repeat="interest in userList[0].userInterests">
+                            <li class="list-group-item">{{interest}} <span class="glyphicon glyphicon-trash pull-right"></span></li>
+                       </div>
+                    </ul>
+                </div>
+                
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+                
+            </div>
+        
+        </div>
+    
+    </div>
+
+
+</div>

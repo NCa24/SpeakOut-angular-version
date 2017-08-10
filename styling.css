@@ -34,3 +34,23 @@
 .interests{
     font-family: "Times New Roman", Georgia, Serif;
 }
+
+#Interests_bar{
+    width: 25%;
+    padding-bottom: 15px;
+}
+
+#myProgress {
+    border-radius: 2px;
+    width: 100%;
+    background-color: #ddd;
+}
+
+#myBar {
+    border-radius: 2px;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
