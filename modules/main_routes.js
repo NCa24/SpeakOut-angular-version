@@ -29,7 +29,6 @@ angular
             .state('articles_route', {
             url: '/realworld/article/:article',
             templateUrl: "views/article.html",
-            controller: "RealWorldListController",
             params: { article: RealWorldServiceProvider.$get().realWorldInfo[0].article}
         })        
 

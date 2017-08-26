@@ -1,1 +1,9 @@
 <p>eu sou um artigo</p>
+
+<div ng-controller="articleRating">
+    
+    <span uib-rating ng-model="rate" max="max" aria-labelledby="default-rating"></span>
+
+    <p>Your rating is: {{rate}} stars</p>
+    
+</div>

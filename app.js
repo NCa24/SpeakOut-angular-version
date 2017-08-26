@@ -1,14 +1,14 @@
 //main module
-angular.module('langLearn', ["UsersMod", "ClassesMod", "RealWorldMod"]);
+angular.module('langLearn', ["ui.router" ,"UsersMod", "ClassesMod", "RealWorldMod"]);
 
 //user info and manipulation module
 angular.module('UsersMod',[]);
 
 //Classes info and manipulation module
-angular.module('ClassesMod', ["ui.router"]);
+angular.module('ClassesMod', []);
 
 //Real World info and manipulation module
-angular.module('RealWorldMod', []);
+angular.module('RealWorldMod', ["ui.bootstrap"]);
 
 
 

@@ -10,7 +10,8 @@ angular
 
 angular
     .module('RealWorldMod')
-    .controller("StarRating", ["$scope", function($scope){
-        
-        
-    }]);
+    .controller("articleRating", function ($scope) {
+    $scope.rate = 0;
+    $scope.max = 10;
+
+});
