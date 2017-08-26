@@ -5,3 +5,12 @@ angular
         $scope.articlesList = RealWorldService.realWorldInfo;
     
     }]);
+
+
+
+angular
+    .module('RealWorldMod')
+    .controller("StarRating", ["$scope", function($scope){
+        
+        
+    }]);

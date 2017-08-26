@@ -5,12 +5,15 @@
             <button class="glyphicon glyphicon-edit pull-right" data-target="#interestsModal" data-toggle="modal"></button> 
         </h4> 
     </div>
-    <ul class="list-group" style="width: 25%">
-      <div ng-repeat="interest in userList[0].userInterests">
-                            <li class="list-group-item">{{interest}}</li>
-                       </div>
+    <ul class="list-group interests_box">
+        <div ng-repeat="interest in userInterests | filter:{value:true}">
+            <li class="list-group-item">{{interest.Interest}}</li>
+            <div ng-repeat="subinterest in interest.subInterests | filter:{value:true}">
+                <li class="list-group-item">{{subinterest.Interest}} {{subinterest.value}}</li>
+            </div>
+        </div>
     </ul>
-    <div style="width: 25%">
+    <div style="width: 33%">
         <h4 style="padding-bottom: 10px">{{userList[0].firstName}} progress overview:</h4>
         <div id="myProgress">
             <div id="myBar">{{userList[0].progress + "%"}}</div>
@@ -28,9 +31,12 @@
                 </div>
                 
                 <div class="modal-body">
-                   <ul class="list-group" style="width: 25%">
-                        <div ng-repeat="interest in userList[0].userInterests">
-                            <li class="list-group-item">{{interest}} <span class="glyphicon glyphicon-trash pull-right"></span></li>
+                   <ul class="list-group" style="width: 50%">
+                       <div ng-repeat="interest in userInterests" ng-click="setInterests(interest); toggle(interest)" ng-class="{'select-on' : interest.value, 'select-off' : !interest.value}"> <!-- setInterests vai tornar o value verdadeiro/falso quando há clique -->
+                            <li class="list-group-item">{{interest.Interest}} {{interest.value}}</li>
+                            <div ng-repeat='subinterest in interest.subInterests' ng-show='interest.state' ng-class="{'select-on' : subinterest.value, 'select-off' : !subinterest.value}" ng-click='$event.stopPropagation(); setInterests(subinterest)'>
+                                <li class="list-group-item">{{subinterest.Interest}} {{subinterest.value}}</li>
+                            </div>
                        </div>
                     </ul>
                 </div>

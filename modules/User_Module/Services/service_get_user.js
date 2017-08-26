@@ -14,8 +14,8 @@ angular
     .service("UserService", function(){ //é mais facil armazenar dados aqui para acesso em diferentes controllers
     var userService = {};
     userService.userInfo = [
-        {firstName: "Jose", lastName: "Silva", progress: 70, userInterests: ["Reading", "Travelling", "Economics", "Basketball"]},
-        {firstName: "Joao", lastName: "Santos", progress: 20, userInterests: ["Cooking", "Football", "Workout", "Cinema"]}
+        {firstName: "Jose", lastName: "Silva", progress: 70, userInts: ["Reading", "Travelling", "Economics", "Basketball"]},
+        {firstName: "Joao", lastName: "Santos", progress: 20, userInts: ["Cooking", "Football", "Workout", "Cinema"]}
     ];
     return userService;
 });
