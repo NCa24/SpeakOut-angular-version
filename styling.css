@@ -64,11 +64,10 @@
 }
 
 .select-off{
-    color:black;
     cursor: pointer;
 }
 
 .select-on{
-    color:green;
+    background-color:#777;
     cursor: pointer;
 }

@@ -6,7 +6,7 @@
         </h4> 
     </div>
     <ul class="list-group interests_box">
-        <div ng-repeat="interest in userInterests | filter:{value:true}">
+        <div ng-repeat="interest in userList[0].userInterests | filter:{value:true}">
             <li class="list-group-item">{{interest.Interest}}</li>
             <div ng-repeat="subinterest in interest.subInterests | filter:{value:true}">
                 <li class="list-group-item">{{subinterest.Interest}} {{subinterest.value}}</li>
@@ -32,10 +32,10 @@
                 
                 <div class="modal-body">
                    <ul class="list-group" style="width: 50%">
-                       <div ng-repeat="interest in userInterests" ng-click="setInterests(interest); toggle(interest)" ng-class="{'select-on' : interest.value, 'select-off' : !interest.value}"> <!-- setInterests vai tornar o value verdadeiro/falso quando há clique -->
-                            <li class="list-group-item">{{interest.Interest}} {{interest.value}}</li>
-                            <div ng-repeat='subinterest in interest.subInterests' ng-show='interest.state' ng-class="{'select-on' : subinterest.value, 'select-off' : !subinterest.value}" ng-click='$event.stopPropagation(); setInterests(subinterest)'>
-                                <li class="list-group-item">{{subinterest.Interest}} {{subinterest.value}}</li>
+                       <div ng-repeat="interest in userList[0].userInterests" ng-click="setInterests(interest); toggle(interest)"> <!-- setInterests vai tornar o value verdadeiro/falso quando há clique -->
+                            <li class="list-group-item" ng-class="{'select-on' : interest.value, 'select-off' : !interest.value}">{{interest.Interest}} {{interest.value}}</li>
+                            <div ng-repeat='subinterest in interest.subInterests' ng-show='interest.state' ng-click='$event.stopPropagation(); setInterests(subinterest)'>
+                                <li class="list-group-item" ng-class="{'select-on' : subinterest.value, 'select-off' : !subinterest.value}">{{subinterest.Interest}} {{subinterest.value}}</li>
                             </div>
                        </div>
                     </ul>
