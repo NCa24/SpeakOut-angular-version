@@ -25,7 +25,7 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a ui-sref="dashboard">Dashboard</a></li>
-					<li><a ui-sref="users({ username: id})">{{userList[0].firstName}}</a></li>
+					<li><a ui-sref="users({ username: id})" insert-username></a></li>
 					<li><a ui-sref="#">Logout</a></li>
 				</ul>
 			</div>
@@ -49,6 +49,8 @@
     <script src="modules/User_Module/Controllers/user_controller.js"></script>
     <script src="modules/Classes_Module/Controllers/class_controller.js"></script>
     <script src="modules/RealWorld_Module/Controllers/realworld_controller.js"></script>
+    <script src="modules/directives.js"></script>
 
 </body>
 </html>
+
