@@ -29,8 +29,8 @@ angular
             .state('articles_route', {
             url: '/realworld/article/:article',
             templateUrl: "views/article.html",
-            params: { article: RealWorldServiceProvider.$get().realWorldInfo[0].article}
-        })        
+            params: { article: null}
+        }) 
 
         /*.otherwise({
             redirectTo: "/"

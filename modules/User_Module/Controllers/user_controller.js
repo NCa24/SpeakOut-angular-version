@@ -6,7 +6,7 @@ angular
         
         $scope.classesList = classesService.classesInfo;
         
-        $scope.articlesList = realWorldService.realWorldInfo;
+        $scope.getArticle = realWorldService.realWorldInfo[0].title;
         
         $scope.setProg = function(){
             var elem = document.getElementById("myBar");   

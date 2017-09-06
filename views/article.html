@@ -1,9 +1,34 @@
-<p>eu sou um artigo</p>
+<div ng-controller="RealWorldListController" class="container">
 
-<div ng-controller="articleRating">
-    
-    <span uib-rating ng-model="rate" max="max"></span>
+    <div class="row">
+        <div class="col-lg-2 col1-artigo">
+            <p>some text 1</p>
+        </div>
 
-    <p>Your rating is: {{rate}} stars</p>
-    
+        <div class="col-lg-7">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p>{{getArticles.title}}</p>
+                    {{getArticles.content}}
+                </div>
+            </div>
+
+            <span uib-rating ng-model="rate" max="max"></span>
+
+            <p>Your rating is: {{rate}} stars</p>
+
+        </div>
+
+        <div class="col-lg-3 col3-artigo">
+            <div class="panel panel-default" ng-repeat="article in articlesList | limitTo: (1 - articlesList.length) | limitTo: 3">
+                <div class="panel-body">
+                    <a ui-sref="articles_route({ article: article.title})" ng-click="changeArticle(article)">{{article.title}}</a> {{article.content | limitTo: 100}}.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
+
+<!--use function to define which article has to be shown. change the values inside the function and then call the variables with different values which will render a different article -->
