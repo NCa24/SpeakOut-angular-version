@@ -8,8 +8,8 @@
         <div class="col-lg-7">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <p>{{getArticles.title}}</p>
-                    {{getArticles.content}}
+                    <p>{{selectedArticle.title}}</p>
+                    {{selectedArticle.content}}
                 </div>
             </div>
 
@@ -22,7 +22,7 @@
         <div class="col-lg-3 col3-artigo">
             <div class="panel panel-default" ng-repeat="article in articlesList | limitTo: (1 - articlesList.length) | limitTo: 3">
                 <div class="panel-body">
-                    <a ui-sref="articles_route({ article: article.title})" ng-click="changeArticle(article)">{{article.title}}</a> {{article.content | limitTo: 100}}.
+                    <a ng-click="changeArticle(article)">{{article.title}}</a> {{article.content | limitTo: 100}}.
                 </div>
             </div>
         </div>

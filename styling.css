@@ -79,3 +79,37 @@
 .col3-artigo{
     padding-left: 46px;
 }
+
+#square1{
+    border: 1px solid blue;
+    padding: 20px;
+        
+}
+
+#square2{
+    border: 1px solid blue;
+    padding: 20px;
+}
+
+.connectDivs{
+    margin-bottom: 5px;
+    padding: 20px;
+    border: 1px solid blue;
+}
+
+.yellow{
+     background-color: yellow;
+}
+
+.green{
+     background-color: green;
+}
+
+.red{
+     background-color: red;
+}
+
+#modules{
+    width: 50%;
+    margin-top: 75px;
+}

@@ -1,16 +1,19 @@
 <div class="border">
-<h2>Hello, <insert-username></insert-username>!</h2>
+    <h2>Hello,
+        <insert-username></insert-username>!</h2>
 
-<h3>Welcome to your Dashboard</h3>
+    <h3>Welcome to your Dashboard</h3>
 </div>
-<p class="titleDashboard"><a ui-sref="classes_route({ aula: id})">Classes</a></p>
+<p class="titleDashboard"><a ui-sref="classesModules_route">Classes</a></p>
 <div class="boxDashboard">
     <p>Class no. 1</p>
     <p>This class is about something...</p>
 </div>
 
-<p class="titleDashboard"><a ui-sref="articles_route({ article: getArticle})">Real World</a></p>
-<div class="boxDashboard">
-    <p>Article</p>
-    <p> This article is about something...</p>
+<div ng-controller="RealWorldListController">
+    <p class="titleDashboard"><a ui-sref="articles_route({ article: selectedArticle.title})">Real World</a></p>
+    <div class="boxDashboard">
+        <p>Article</p>
+        <p> This article is about something...</p>
+    </div>
 </div>
