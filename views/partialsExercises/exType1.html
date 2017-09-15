@@ -1,25 +1,29 @@
-    <div class="col-lg-4">
-        countries and cities
-        <ul class="contentSource">
-            <li class="country" data-value="country">USA</li>
-            <li class="country" data-value="country">Portugal</li>
-            <li class="city" data-value="city">Lisbon</li>
-            <li class="city" data-value="city">Porto</li>
-        </ul>
-    </div>
-    <div id="square1" class="col-lg-4">
-        Countries
-        <ul id="countries">
-        </ul>
-    </div>
-    <div id="square2" class="col-lg-4">
-        Cities
-        <ul id="cities">
-        </ul>
+<div ng-controller="exType1Controller">
+    <div class="row">
+        <div class="col-lg-4">
+            countries and cities
+            <ul class="contentSource">
+                <li class="country" data-value="country">USA</li>
+                <li class="country" data-value="country">Portugal</li>
+                <li class="city" data-value="city">Lisbon</li>
+                <li class="city" data-value="city">Porto</li>
+            </ul>
+        </div>
+        <div id="square1" class="col-lg-4">
+            Countries
+            <ul id="countries">
+            </ul>
+        </div>
+        <div id="square2" class="col-lg-4">
+            Cities
+            <ul id="cities">
+            </ul>
+        </div>
     </div>
     <div>
         <button ng-click="checkAnswer()">
             ANSWER
         </button>
-        <div ng-show="showAnswer">Correcto</div>
+        <div ng-show="showAnswer">Correct</div>
     </div>
+</div>

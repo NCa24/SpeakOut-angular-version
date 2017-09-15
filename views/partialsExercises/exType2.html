@@ -1,36 +1,42 @@
-    <div class="col-lg-3">
+<div ng-controller="exType2Controller">
+    <div class="row">
+        <div class="col-lg-3">
 
-    </div>
-    <div class="col-lg-2">
+        </div>
+        <div class="col-lg-2">
 
-        <div ng-repeat="item in Column1" class="connectDivs" ng-class="item.value && item.color" ng-click="ChangeColorAndValue(item)">
-            <div>
-                <p> {{item.sentence}} </p>
+            <div ng-repeat="item in Column1" class="connectDivs" ng-class="item.value && item.color" ng-click="ChangeColorAndValue(item)">
+                <div>
+                    <p> {{item.sentence}} </p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-lg-2">
+        <div class="col-lg-2">
 
-    </div>
+        </div>
 
-    <div class="col-lg-2">
+        <div class="col-lg-2">
 
-        <div ng-repeat="item in Column2" class="connectDivs" ng-class="item.value && item.color" ng-click="ChangeColorAndValue2(item)">
-            <div>
-                <p> {{item.sentence}} </p>
+            <div ng-repeat="item in Column2" class="connectDivs" ng-class="item.value && item.color" ng-click="ChangeColorAndValue2(item)">
+                <div>
+                    <p> {{item.sentence}} </p>
+                </div>
             </div>
         </div>
+
+
+        <div class="col-lg-3">
+
+        </div>
     </div>
-
-
-    <div class="col-lg-3">
-
-    </div>
+    
+    <br>
     
     <div>
         <button ng-click="checkAnswer2()">
             ANSWER
         </button>
-        <div ng-show="showAnswer2">Correcto</div>
+        <div ng-show="showAnswer2">Correct</div>
     </div>
+</div>

@@ -1,0 +1,15 @@
+<div ng-controller="exType5Controller">
+    <div class="source" ng-repeat="item in exDragDrop">
+
+        <div class="content" data-value="{{item.ansID}}" ng-click="fun($event)">{{item.name}}</div>
+    </div>
+    <div ng-repeat="item in exDragDrop">
+        <div class="receiver" data-value="{{$index}}"></div>
+    </div>
+    <div>
+        <button ng-click="checkAnswer5()">
+            ANSWER
+        </button>
+        <div ng-show="showAnswer5">Correct</div>
+    </div>
+</div>

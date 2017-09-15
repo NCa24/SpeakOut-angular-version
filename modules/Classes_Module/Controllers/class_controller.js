@@ -5,7 +5,13 @@ angular
         $scope.classesList = ClassesService.classesInfo;
 
 
-        //NAO ESQUECER DE ALTERAR CSS DOS ID E CLASSES ABAIXO inicio do exercicio 1 de arrastar
+    }]);
+
+
+angular
+    .module("ClassesMod")
+    .controller("exType1Controller", ["$scope", function ($scope) {
+
 
         $(".contentSource li").draggable({
             helper: "clone"
@@ -34,6 +40,7 @@ angular
             if ($scope.exercise1 === true && $scope.exercise2 === true) {
 
                 $scope.showAnswer = true;
+                $scope.classesList[0].complete = true; //esta variavel esta na scope do controloador principal das Classes, mas como este controlador é chamado dentro desse principal, tem acesso a essa variável
 
             } else {
 
@@ -41,10 +48,11 @@ angular
             }
         }
 
-        //fim do exercicio 1 de arrastar
+    }]);
 
-        //exercicio 2 de ligar caixas dum lado e doutro
-
+angular
+    .module("ClassesMod")
+    .controller("exType2Controller", ["$scope", function ($scope) {
         $scope.Column1 = [
             {
                 sentence: "string1",
@@ -112,9 +120,10 @@ angular
 
         $scope.checkAnswer2 = function () {
 
-            for (var i = 0; i < $scope.Column2.length; i++){
+            for (var i = 0; i < $scope.Column2.length; i++) {
                 if ($scope.Column2[i].ansID === $scope.Column2[i].ansVal && i === $scope.Column2.length - 1) {
                     $scope.showAnswer2 = true;
+                    $scope.classesList[1].complete = true;
                 } else if ($scope.Column2[i].ansID === $scope.Column2[i].ansVal) {
                     continue;
                 } else {
@@ -123,4 +132,92 @@ angular
                 };
             }
         }
+            }]);
+
+angular
+    .module("ClassesMod")
+    .controller("exType3Controller", ["$scope", function ($scope) {
+        $scope.answerType3 = "";
+        $scope.showAnswer3 = false;
+        $scope.correctAns = "Learning English"; //tem que entrar aqui a resposta para poder haver comparaçao
+        $scope.checkAnswer3 = function () {
+            $scope.answerType3 = $scope.answerType3.toLowerCase();
+            console.log($scope.answerType3);
+            $scope.correctAns = $scope.correctAns.toLowerCase();
+            if ($scope.answerType3 === $scope.correctAns) {
+                $scope.showAnswer3 = true;
+            }
+        };
+
+    }]);
+
+angular
+    .module("ClassesMod")
+    .controller("exType5Controller", ["$scope", "$timeout", function ($scope, $timeout) { //$timeout injection makes Angular run before jquery
+        $scope.exDragDrop = [
+            {
+                name: "john",
+                ansID: 1
+            },
+            {
+                name: "Edward",
+                ansID: 0
+            },
+            {
+                name: "Carl",
+                ansID: 2
+            }
+        ];
+        /*$scope.fun = function ($event) {
+            $scope.three = angular.element($event.target).attr('data-value');;
+            console.log($scope.three);
+        }*/
+
+        $timeout(function () {
+            {
+                $(".source").draggable({
+                    helper: "clone"
+                })
+            }
+        });
+
+        $timeout(function () {
+            {
+                $(".receiver").droppable({
+                    drop: function (event, ui) {
+                        var targetElem = $(this).attr("id");
+                        $(ui.draggable).appendTo(this);
+                    }
+                });
+            }
+        });
+
+        $scope.showAnswer5 = false;
+        $scope.loopCheck = [];
+        $scope.checkAnswer5 = function () {
+            $(".receiver").each(function (index) {
+                console.log($(this).find('.content').attr('data-value'));
+                console.log(index);
+                if ($(this).find('.content').attr('data-value') == index) {
+                    $scope.loopCheck.push(true);
+                } else {
+                    $scope.loopCheck.push(false);
+                };
+
+            });
+            console.log($scope.loopCheck);
+
+            for (var i = 0; i < $scope.loopCheck.length; i++) {
+                if (($scope.loopCheck.length - 1 === i) && $scope.loopCheck[i] === true) {
+                    $scope.showAnswer5 = true;
+                    $scope.loopCheck = [];
+                } else if ($scope.loopCheck[i] === true) {
+                    continue;
+                } else {
+                    $scope.showAnswer5 = false;
+                    $scope.loopCheck = [];
+                    break;
+                }
+            }
+        };
     }]);
