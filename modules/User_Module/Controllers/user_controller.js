@@ -1,10 +1,10 @@
 angular
     .module('UsersMod')    
-    .controller("UserListController", ["$scope","$stateParams", "UserService", "ClassesService", "RealWorldService", function($scope, $stateParams, UserService, classesService, realWorldService){
+    .controller("UserListController", ["$scope","$stateParams", "UserService", "ClassesService", "RealWorldService", function($scope, $stateParams, UserService, ClassesService, realWorldService){
         
         $scope.userList = UserService.userInfo;
         
-        $scope.classesList = classesService.classesInfo;
+        $scope.classesList = ClassesService.module1; //será isto mesmo preciso?
         
         $scope.getArticle = realWorldService.realWorldInfo[0].title;
         

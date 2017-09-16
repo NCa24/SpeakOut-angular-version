@@ -23,10 +23,10 @@ angular
                 controller: "UserListController"
             })
             .state('classes_route', {
-                url: '/classes/class/:aula',
+                url: '/classes/class/module/:module',
                 templateUrl: "views/partialsExercises/class.html",
                 params: {
-                    aula: ClassesServiceProvider.$get().classesInfo[0].lesson
+                    module: ClassesServiceProvider.$get().module1[0].module
                 }
             })
             .state('classesModules_route', {

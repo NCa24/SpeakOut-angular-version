@@ -1,7 +1,7 @@
 <div ng-controller="exType3Controller">
     <div>
-        <!-- Inserir pergunta que vem da base de dados aqui-->
-        <input type="text" ng-model="answerType3" />
+        <h4>{{exercise.question}}</h4>
+        <input type="text" ng-model="userAnswer" />
     </div>
     <div>
         <button ng-click="checkAnswer3()">

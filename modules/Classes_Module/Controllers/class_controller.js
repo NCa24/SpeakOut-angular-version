@@ -2,8 +2,9 @@ angular
     .module('ClassesMod')
     .controller("ClassesListController", ["$scope", "$stateParams", "UserService", "ClassesService", "RealWorldService", function ($scope, $stateParams, UserService, ClassesService, realWorldService) {
 
-        $scope.classesList = ClassesService.classesInfo;
+        //$scope.classesList = ClassesService.classesInfo; para activar se estiver a dar erros. este foi o vector original e ha codigo que pode estar escrito em funçao disto.
 
+        $scope.module1 = ClassesService.module1;
 
     }]);
 
@@ -53,50 +54,14 @@ angular
 angular
     .module("ClassesMod")
     .controller("exType2Controller", ["$scope", function ($scope) {
-        $scope.Column1 = [
-            {
-                sentence: "string1",
-                value: false,
-                color: "yellow",
-                ansID: 1,
-        },
-            {
-                sentence: "string2",
-                value: false,
-                color: "green",
-                ansID: 2,
-            },
-            {
-                sentence: "string3",
-                value: false,
-                color: "red",
-                ansID: 3,
-            }
-        ];
 
-        $scope.Column2 = [
-            {
-                sentence: "string4",
-                value: false,
-                color: null,
-                ansID: 1,
-                ansVal: Number
-        },
-            {
-                sentence: "string5",
-                value: false,
-                color: null,
-                ansID: 2,
-                ansVal: Number
-            },
-            {
-                sentence: "string6",
-                value: false,
-                color: null,
-                ansID: 3,
-                ansVal: Number
-            }
-        ];
+        $scope.getData = function (obj) {
+            $scope.exercise = obj;
+        };
+
+        $scope.Column1 = $scope.exercise.column1;
+
+        $scope.Column2 = $scope.exercise.column2;
 
         $scope.colorToImport = String;
         $scope.AnsValToImport = Number;
@@ -105,7 +70,7 @@ angular
 
             item.value = !item.value;
             $scope.colorToImport = item.color;
-            $scope.AnsValToImport = item.ansID;
+            $scope.AnsValToImport = item.elemID;
 
         };
 
@@ -121,10 +86,10 @@ angular
         $scope.checkAnswer2 = function () {
 
             for (var i = 0; i < $scope.Column2.length; i++) {
-                if ($scope.Column2[i].ansID === $scope.Column2[i].ansVal && i === $scope.Column2.length - 1) {
+                if ($scope.Column2[i].elemID === $scope.Column2[i].ansVal && i === $scope.Column2.length - 1) {
                     $scope.showAnswer2 = true;
-                    $scope.classesList[1].complete = true;
-                } else if ($scope.Column2[i].ansID === $scope.Column2[i].ansVal) {
+                    $scope.exercise.exSolved = true;
+                } else if ($scope.Column2[i].elemID === $scope.Column2[i].ansVal) {
                     continue;
                 } else {
                     $scope.showAnswer2 = false;
@@ -137,19 +102,31 @@ angular
 angular
     .module("ClassesMod")
     .controller("exType3Controller", ["$scope", function ($scope) {
-        $scope.answerType3 = "";
-        $scope.showAnswer3 = false;
-        $scope.correctAns = "Learning English"; //tem que entrar aqui a resposta para poder haver comparaçao
-        $scope.checkAnswer3 = function () {
-            $scope.answerType3 = $scope.answerType3.toLowerCase();
-            console.log($scope.answerType3);
-            $scope.correctAns = $scope.correctAns.toLowerCase();
-            if ($scope.answerType3 === $scope.correctAns) {
-                $scope.showAnswer3 = true;
-            }
+
+        $scope.getData = function (obj) {
+            $scope.exercise = obj;
         };
+        $scope.userAnswer = "";
+        $scope.showAnswer3 = false;
+        $scope.correctAns = $scope.exercise.answer;
+            $scope.checkAnswer3 = function () {
+                $scope.userAnswer = $scope.userAnswer.toLowerCase();
+                $scope.correctAns = $scope.correctAns.toLowerCase();
+                if ($scope.userAnswer === $scope.correctAns) {
+                    $scope.showAnswer3 = true;
+                    $scope.exercise.exSolved = true;
+                }
+            };
 
     }]);
+
+angular
+    .module("ClassesMod")
+    .controller("exType4Controller", ["$scope", function ($scope) {
+
+
+    }]);
+
 
 angular
     .module("ClassesMod")
