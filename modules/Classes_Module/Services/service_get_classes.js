@@ -18,6 +18,7 @@ angular
     this.module1 = [
         {
             initialize : true, //serve para inicializar o ng-if dentro do ng repeat
+            hide: false,
             module: "1",
             exercise: "1",
             exSolved: false,
@@ -28,10 +29,20 @@ angular
         {
             module: "1",
             exercise: "2",
+            hide: false,
             exSolved: false, //responder usando input
             exType: "exType3.html",
             question: "Traduz: Olá! Boa tarde",
             answer: "Hello! Good afternoon"
+        },
+        {
+            module: "1",
+            exercise: "3",
+            hide: false,
+            exSolved: false,
+            exType: "exType3.html",
+            question: "Traduz: Do you speak Portuguese?",
+            answer: "Falas Portugues?"
         }
     ];
 

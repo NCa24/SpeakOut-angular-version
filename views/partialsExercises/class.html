@@ -1,9 +1,13 @@
 <div ng-controller="ClassesListController">
     <div ng-repeat="exercise in module1">
-        <div ng-if="exercise.initialize || module1[$index - 1].exSolved">
-            <div ng-include="'views/partialsExercises/' + exercise.exType" ng-init="getData(exercise)"></div>
+        <div ng-if="exercise.initialize || module1[$index - 1].exSolved" class="exerciseAnim">
+            <div class="alert alert-success" ng-click="toggle(exercise)">
+                <p>Exercise {{exercise.exercise}}</p>
+            </div>
+            <div class="exerciseAnim" ng-if="!exercise.hide">
+                <div ng-include="'views/partialsExercises/' + exercise.exType" ng-init="getData(exercise)" class="exerciseAnim"></div>
+                <br>
+            </div>
         </div>
     </div>
-
-
 </div>

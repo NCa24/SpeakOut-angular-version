@@ -5,7 +5,7 @@ angular.module('langLearn', ["ui.router" ,"UsersMod", "ClassesMod", "RealWorldMo
 angular.module('UsersMod',[]);
 
 //Classes info and manipulation module
-angular.module('ClassesMod', []);
+angular.module('ClassesMod', ["ngAnimate"]);
 
 //Real World info and manipulation module
 angular.module('RealWorldMod', ["ui.bootstrap"]);

@@ -5,6 +5,9 @@ angular
         //$scope.classesList = ClassesService.classesInfo; para activar se estiver a dar erros. este foi o vector original e ha codigo que pode estar escrito em funçao disto.
 
         $scope.module1 = ClassesService.module1;
+        $scope.toggle = function (val) {
+            val.hide = !val.hide;
+        }
 
     }]);
 
@@ -89,6 +92,7 @@ angular
                 if ($scope.Column2[i].elemID === $scope.Column2[i].ansVal && i === $scope.Column2.length - 1) {
                     $scope.showAnswer2 = true;
                     $scope.exercise.exSolved = true;
+                    $scope.exercise.hide = true;
                 } else if ($scope.Column2[i].elemID === $scope.Column2[i].ansVal) {
                     continue;
                 } else {
@@ -109,14 +113,14 @@ angular
         $scope.userAnswer = "";
         $scope.showAnswer3 = false;
         $scope.correctAns = $scope.exercise.answer;
-            $scope.checkAnswer3 = function () {
-                $scope.userAnswer = $scope.userAnswer.toLowerCase();
-                $scope.correctAns = $scope.correctAns.toLowerCase();
-                if ($scope.userAnswer === $scope.correctAns) {
-                    $scope.showAnswer3 = true;
-                    $scope.exercise.exSolved = true;
-                }
-            };
+        $scope.checkAnswer3 = function () {
+            $scope.userAnswer = $scope.userAnswer.toLowerCase();
+            $scope.correctAns = $scope.correctAns.toLowerCase();
+            if ($scope.userAnswer === $scope.correctAns) {
+                $scope.showAnswer3 = true;
+                $scope.exercise.exSolved = true;
+            }
+        };
 
     }]);
 
