@@ -7,8 +7,7 @@ angular
         $scope.module1 = ClassesService.module1;
         $scope.toggle = function (val) {
             val.hide = !val.hide;
-        }
-
+        };
     }]);
 
 
@@ -57,6 +56,13 @@ angular
 angular
     .module("ClassesMod")
     .controller("exType2Controller", ["$scope", function ($scope) {
+
+        /*$scope.random = function () {
+
+            return 0.5 - Math.random();
+
+        };*/
+
 
         $scope.getData = function (obj) {
             $scope.exercise = obj;
@@ -119,6 +125,7 @@ angular
             if ($scope.userAnswer === $scope.correctAns) {
                 $scope.showAnswer3 = true;
                 $scope.exercise.exSolved = true;
+                $scope.exercise.hide = true;
             }
         };
 
@@ -201,4 +208,11 @@ angular
                 }
             }
         };
+    }]);
+
+angular
+    .module("ClassesMod")
+    .controller("exType6Controller", ["$scope", function ($scope) {
+        
+
     }]);

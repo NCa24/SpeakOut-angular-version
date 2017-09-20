@@ -5,11 +5,11 @@
         </div>
         <div class="col-lg-2">
 
-            <div ng-repeat="item in Column1" class="connectDivs" ng-class="item.value && item.color" ng-click="ChangeColorAndValue(item)">
-                <div>
-                    <p> {{item.elemName}} </p>
-                </div>
-            </div>
+            <ul class="list-group">
+                <li ng-repeat="item in Column1" class="list-group-item" ng-class="item.value && item.color" ng-click="ChangeColorAndValue(item)">
+                    {{item.elemName}}
+                </li>
+            </ul>
         </div>
 
         <div class="col-lg-1">
@@ -18,11 +18,10 @@
 
         <div class="col-lg-2">
 
-            <div ng-repeat="item in Column2" class="connectDivs" ng-class="item.value && item.color" ng-click="ChangeColorAndValue2(item)">
-                <div>
-                    <p> {{item.elemName}} </p>
-                </div>
-            </div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in Column2" ng-class="item.value && item.color" ng-click="ChangeColorAndValue2(item)">{{item.elemName}}
+                </li>
+            </ul>
         </div>
 
 
@@ -30,9 +29,9 @@
 
         </div>
     </div>
-    
+
     <br>
-    
+
     <div>
         <button ng-click="checkAnswer2()">
             ANSWER

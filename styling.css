@@ -89,30 +89,24 @@
     padding: 20px;
 }
 
-.connectDivs {
-    margin-bottom: 10px;
-    text-align: center;
-    border: 1px solid blue;
+.color1 {
+    background-color: #bfe696;
 }
 
-.yellow {
-    background-color: yellow;
+.color2 {
+    background-color: #c2e0eb;
 }
 
-.green {
-    background-color: green;
+.color3 {
+    background-color: #dbb8ed;
 }
 
-.red {
-    background-color: red;
+.color4 {
+    background-color: #f0d2b8;
 }
 
-.chocolate {
-    background-color: chocolate;
-}
-
-.blue {
-    background-color: blue;
+.color5 {
+    background-color: #f5eda3;
 }
 
 #modules {
@@ -149,4 +143,27 @@
 .exerciseAnim.ng-leave.ng-leave-active {
     opacity: 0;
     transform: translateY(-10%);
+}
+
+.box1 {
+    font-size: 1vw;
+    background-color: green;
+    width: 8%;
+    height: 40px;
+}
+
+.box2 {
+    font-size: 2vw;
+    margin-left: 8%;
+    background-color: blue;
+    width: 8%;
+    height: 40px;
+}
+
+.box3 {
+    font-size: 3vw;
+    margin-left: 16%;
+    background-color: blue;
+    width: 8%;
+    height: 40px;
 }
