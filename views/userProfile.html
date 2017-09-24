@@ -32,9 +32,9 @@
                 
                 <div class="modal-body">
                    <ul class="list-group" style="width: 50%">
-                       <div ng-repeat="interest in userList[0].userInterests" ng-click="setInterests(interest); toggle(interest)"> <!-- setInterests vai tornar o value verdadeiro/falso quando há clique -->
+                       <div ng-repeat="interest in userList[0].userInterests" ng-click="setInterests(interest)"> <!-- setInterests vai tornar o value verdadeiro/falso quando há clique -->
                             <li class="list-group-item" ng-class="{'select-on' : interest.value, 'select-off' : !interest.value}">{{interest.Interest}}</li>
-                            <div ng-repeat='subinterest in interest.subInterests' ng-show='interest.state' ng-click='$event.stopPropagation(); setInterests(subinterest)'>
+                            <div ng-repeat='subinterest in interest.subInterests' ng-show='interest.value' ng-click='$event.stopPropagation(); setInterests(subinterest)'>
                                 <li class="list-group-item" ng-class="{'select-on' : subinterest.value, 'select-off' : !subinterest.value}">{{subinterest.Interest}}</li>
                             </div>
                        </div>

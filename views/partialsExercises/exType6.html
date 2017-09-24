@@ -1,11 +1,17 @@
 <div class="container" ng-controller="exType6Controller">
-    <div class="row">
-        <div class="box1">hahah</div>
+    <div class="boxQuestion">
+        <div ng-repeat="elem in toDrag" class="box1">{{elem}}</div>
     </div>
-    <div class="row">
-        <div class="box2">hehehehehehhe</div>
+    <div class="box1 toWrap">
     </div>
-    <div class="row">
-        <div class="box3">hihih</div>
+    <div class="box2 toWrap">
+    </div>
+    <div class="box3 toWrap">
+    </div>
+    <div ng-show="toDrag.length > 3" class="box4 toWrap">
+    </div>
+    <div ng-show="toDrag.length > 4" class="box5 toWrap">
+    </div>
+    <div ng-show="toDrag.length > 5" class="box6 toWrap">
     </div>
 </div>

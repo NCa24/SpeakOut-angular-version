@@ -28,9 +28,4 @@ angular
         };
         
         
-        $scope.toggle = function(interest) {
-            interest.state = !interest.state;
-        };
-        
-        
     }]);

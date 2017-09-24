@@ -65,12 +65,28 @@ angular
 
 
         $scope.getData = function (obj) {
-            $scope.exercise = obj;
+            $scope.exerciseDB = obj;
         };
+        $scope.toggle = function (val) {
+            val.hide = !val.hide;
+        }
 
-        $scope.Column1 = $scope.exercise.column1;
+        /*$scope.Column1 = $scope.exerciseDB.column1;
 
-        $scope.Column2 = $scope.exercise.column2;
+        $scope.Column2 = $scope.exerciseDB.column2;
+
+        var color1 = "color1";
+        var color2 = "color2";
+        var color3 = "color3";
+        var color4 = "color4";
+        var color5 = "color5";
+
+        $scope.col1 = {};
+
+        for(var i = 0; i < $scope.exerciseDB.column1; i++){
+            
+        }*/
+
 
         $scope.colorToImport = String;
         $scope.AnsValToImport = Number;
@@ -212,7 +228,15 @@ angular
 
 angular
     .module("ClassesMod")
-    .controller("exType6Controller", ["$scope", function ($scope) {
-        
+    .controller("exType6Controller", ["$scope", "$timeout", function ($scope, $timeout) {
+        $scope.toDrag = ["ola a", "ola b", "ola c", "ola d", "ola e", "ola f"];
+        $scope.toDragLength = $scope.toDrag.length;
+
+        $timeout(function () {
+            {
+                $('.toWrap').wrapAll('<div class="wrappedStairs"/>');
+                $(".wrappedStairs").width($scope.toDrag.length * 90);
+             
+        }});
 
     }]);
