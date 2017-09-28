@@ -5,11 +5,13 @@
                 <p>Exercise {{exercise.exercise}}</p>
             </div>
             <div class="exerciseAnim" ng-if="!exercise.hide">
-                <div ng-include="'views/partialsExercises/' + exercise.exType" ng-init="getData(exercise)" class="exerciseAnim"></div>
+                <div ng-include="'views/partialsExercises/' + exercise.exType" class="exerciseAnim"></div>
                 <br>
             </div>
         </div>
     </div>
 </div>
+
+<div ng-include="'views/partialsExercises/exType5.html'"></div>
 
 <div ng-include="'views/partialsExercises/exType6.html'"></div>

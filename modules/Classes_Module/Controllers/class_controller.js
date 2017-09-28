@@ -65,7 +65,7 @@ angular
 
 
         $scope.getData = function (obj) {
-            $scope.exerciseDB = obj;
+            $scope.exercise = obj;
         };
         $scope.toggle = function (val) {
             val.hide = !val.hide;
@@ -229,7 +229,7 @@ angular
 angular
     .module("ClassesMod")
     .controller("exType6Controller", ["$scope", "$timeout", function ($scope, $timeout) {
-        $scope.toDrag = ["ola a", "ola b", "ola c", "ola d", "ola e", "ola f"];
+        $scope.toDrag = ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5", "Option 6"];
         $scope.toDragLength = $scope.toDrag.length;
 
         $timeout(function () {
